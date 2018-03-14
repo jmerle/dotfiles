@@ -4,11 +4,11 @@ My dotfiles, mostly coming from [holman](https://github.com/holman/dotfiles)'s d
 ## Installation
 1. Make sure `zsh` and `oh-my-zsh` are installed.
 2. Install the [spaceship](https://github.com/denysdovhan/spaceship-prompt) zsh theme.
-3. Copy `git/gitconfig.local.symlink` to `git/gitconfig.local.symlink`.
-4. Do [this](https://askubuntu.com/a/776335).
-5. Install [SDKMAN](http://sdkman.io/).
-4. Clone this repository to `.dotfiles`.
-5. Run `./install`.
+3. Install [SDKMAN](http://sdkman.io/).
+4. Clone this repository to `~/.dotfiles`.
+5. Copy `git/gitconfig.local.symlink` to `git/gitconfig.local.symlink`.
+6. Do [this](https://askubuntu.com/a/776335).
+7. Run `./install`.
 
 ## Updating
 Simply run `./install` again.
