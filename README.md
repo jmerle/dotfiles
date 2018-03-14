@@ -4,8 +4,9 @@ My dotfiles, mostly coming from [holman](https://github.com/holman/dotfiles)'s d
 ## Installation
 1. Make sure `zsh` and `oh-my-zsh` are installed.
 2. Install the [spaceship](https://github.com/denysdovhan/spaceship-prompt) zsh theme.
-2. Copy `git/gitconfig.local.symlink` to `git/gitconfig.local.symlink`.
-3. Do [this](https://askubuntu.com/a/776335).
+3. Copy `git/gitconfig.local.symlink` to `git/gitconfig.local.symlink`.
+4. Do [this](https://askubuntu.com/a/776335).
+5. Install [SDKMAN](http://sdkman.io/).
 4. Clone this repository to `.dotfiles`.
 5. Run `./install`.
 
@@ -33,8 +34,8 @@ There's a few special files in the hierarchy.
 ## Order of loading
 
 The various components are loaded in the following order:
-1. Source `~/.localrc` if it exists.
-2. Source all `topic/path.zsh` files.
-3. Source all `topic/*.zsh` files, except for `topic/path.zsh` and `topic/completion.zsh` files.
-4. Initialize autocomplete.
-5. Source all `topic/completion.zsh` files.
+1. Source all `topic/path.zsh` files.
+2. Source all `topic/*.zsh` files, except for `topic/path.zsh` and `topic/completion.zsh` files.
+3. Initialize autocomplete.
+4. Source all `topic/completion.zsh` files.
+5. Source `~/.localrc` if it exists.
