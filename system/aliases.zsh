@@ -4,3 +4,4 @@ alias dt="cd ~/Desktop"
 alias mega="cd ~/Documents/MEGA"
 
 alias ll='ls -l'
+alias open='xdg-open'
