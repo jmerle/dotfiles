@@ -8,4 +8,4 @@ Clone this repository to `~/.dotfiles` and run `./install.sh`.
 Simply get the latest changes with `git pull` and run `./install.sh` again.
 
 ## Local configuration
-If `~/.localrc` exists, it is automatically sourced at the end of `~/.zshrc`.
+If `~/.localrc` exists, it is automatically sourced after everything except for SDKMAN is initialized.

@@ -66,18 +66,11 @@ if [[ ! -d "$HOME/.sdkman" ]]; then
     curl -s "https://get.sdkman.io" | bash
 fi
 
-# Stow stow/
-echo "Stowing stow"
-stow -D stow
-stow stow
-
-# Stow all directories except stow/
+# Stow all directories
 for dir in */; do
-    if [[ $dir != "stow/" ]]; then
-        echo "Stowing ${dir::-1}"
-        stow -D $dir
-        stow $dir
-    fi
+    echo "Stowing ${dir::-1}"
+    stow -D $dir
+    stow $dir
 done
 
 # All done, final message depends on whether zsh has just been installed or not
