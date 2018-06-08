@@ -8,6 +8,9 @@ export LANG=en_US.UTF-8
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
+# Yarn
+export PATH="$HOME/.yarn/bin:$PATH"
+
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"

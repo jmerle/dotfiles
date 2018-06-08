@@ -4,7 +4,7 @@ source ~/.zplug/init.zsh
 # Let zplug manage itself
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
-# NVM with lazy-loading
+# nvm with lazy-loading
 export NVM_LAZY_LOAD=true
 zplug "lukechilds/zsh-nvm"
 
@@ -16,7 +16,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
-# Theme
+# Prompt theme
 zplug "denysdovhan/spaceship-prompt", use:"spaceship.zsh", from:github, as:theme
 
 # Install plugins which are not yet installed
@@ -28,10 +28,7 @@ fi
 zplug load >/dev/null
 
 # Install Node.js if it's not already installed
-if [[ $(nvm current) == "none" ]]; then
+if [[ ! -d "$NVM_DIR/versions" ]]; then
     echo "Installing latest Node.js version"
     nvm install node
 fi
-
-# Add Yarn's global packages to the path, after nvm has been initialised
-export PATH="$PATH:`yarn global bin`"
