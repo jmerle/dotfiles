@@ -1,3 +1,36 @@
+# Navigation
+alias dl='cd ~/Downloads'
+alias pr='cd ~/Projects'
+alias dt='cd ~/Desktop'
+alias dc='cd ~/Documents'
+alias mega='cd ~/Documents/MEGA'
+
+# Package management
+alias ai='sudo apt-get install'
+alias as='sudo apt-cache search'
+alias au='sudo apt-get update'
+alias auu='sudo apt-get update && sudo apt-get upgrade'
+
+# Utilities
+alias reload='. ~/.zshrc'
+alias ll='ls -l'
+alias open='xdg-open'
+alias cls='clear'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
+# Git
+alias g='git'
+alias gac='git add -A && git commit -m'
+alias gaa='git add -A && git commit --amend -C HEAD'
+
+# PHP
+alias art='php artisan'
+alias c='composer'
+alias xdebug-enable='sudo phpenmod xdebug'
+alias xdebug-disable='sudo phpdismod xdebug'
+
+# Web related
 alias apache-start='sudo systemctl start apache2 && apache-status'
 alias apache-stop='sudo systemctl stop apache2 && apache-status'
 alias apache-restart='sudo systemctl restart apache2 && apache-status'
