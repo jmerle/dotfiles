@@ -18,6 +18,7 @@ alias open='xdg-open'
 alias cls='clear'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+alias fopen='xdg-open "$(fzf)"'
 
 # Git
 alias g='git'

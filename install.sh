@@ -49,15 +49,9 @@ if ! command -v yarn &>/dev/null; then
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
-    # Install Yarn without installing Node.js, NVM installs Node.js
+    # Install Yarn without installing Node.js, nvm takes care of that
     sudo apt-get update
     sudo apt-get install --no-install-recommends yarn
-fi
-
-# Install rbenv
-if [[ ! -d "$HOME/.rbenv" ]]; then
-    echo "Installing rbenv"
-    curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash
 fi
 
 # Install SDKMAN

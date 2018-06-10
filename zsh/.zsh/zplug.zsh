@@ -1,17 +1,19 @@
+# nvm with lazy-loading
+export NVM_LAZY_LOAD=true
+
 # Source zplug
 source ~/.zplug/init.zsh
 
 # Let zplug manage itself
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
-# nvm with lazy-loading
-export NVM_LAZY_LOAD=true
 zplug "lukechilds/zsh-nvm"
-
+zplug "cswl/zsh-rbenv"
 zplug "peco/peco", as:command, from:gh-r
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 zplug "djui/alias-tips"
 zplug "paulirish/git-open", as:plugin
+zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
@@ -32,3 +34,15 @@ if [[ ! -d "$NVM_DIR/versions" ]]; then
     echo "Installing latest Node.js version"
     nvm install node
 fi
+
+# Install Ruby if it's not already installed
+if rbenv version | grep "system" &>/dev/null; then
+    echo "Installing Ruby 2.5.1 (this might take a while)"
+    sudo apt-get install -y libssl-dev libreadline-dev
+    rbenv install 2.5.1
+    rbenv global 2.5.1
+fi
+
+# History substring search keybindings
+bindkey '\eOA' history-substring-search-up
+bindkey '\eOB' history-substring-search-down

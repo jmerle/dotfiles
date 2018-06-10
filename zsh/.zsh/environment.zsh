@@ -11,24 +11,6 @@ export CLICOLOR=true
 # Yarn
 export PATH="$HOME/.yarn/bin:$PATH"
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-# Install Ruby if it's not already installed
-if rbenv version | grep "system" &>/dev/null; then
-    echo "Installing Ruby 2.5.1 (this might take a while)"
-    sudo apt-get install -y libssl-dev libreadline-dev
-    rbenv install 2.5.1
-    rbenv global 2.5.1
-fi
-
-# Install bundler if it's not already installed
-if ! gem list | grep "bundler" &>/dev/null; then
-    echo "Installing bundler"
-    gem install bundler
-fi
-
 e () {
     exec "$EDITOR" "${1:-.}"
 }
