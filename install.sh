@@ -50,6 +50,7 @@ if ! command -v yarn &>/dev/null; then
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
     # Install Yarn without installing Node.js, nvm takes care of that
+    sudo apt-get remove cmdtest
     sudo apt-get update
     sudo apt-get install --no-install-recommends yarn
 fi

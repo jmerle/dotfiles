@@ -1,5 +1,5 @@
 # Path variables
-export PATH="./bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 
 # Environment variables
@@ -12,5 +12,5 @@ export CLICOLOR=true
 export PATH="$HOME/.yarn/bin:$PATH"
 
 e () {
-    exec "$EDITOR" "${1:-.}"
+    "$EDITOR" "${1:-.}"
 }
