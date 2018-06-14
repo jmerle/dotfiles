@@ -55,18 +55,18 @@ if ! command -v yarn &>/dev/null; then
     sudo apt-get install --no-install-recommends yarn
 fi
 
-# Install SDKMAN
-if [[ ! -d "$HOME/.sdkman" ]]; then
-    echo "Installing SDKMAN"
-    curl -s "https://get.sdkman.io" | bash
-fi
-
 # Stow all directories
 for dir in */; do
     echo "Stowing ${dir::-1}"
     stow -D $dir
     stow $dir
 done
+
+# Install SDKMAN
+if [[ ! -d "$HOME/.sdkman" ]]; then
+    echo "Installing SDKMAN"
+    curl -s "https://get.sdkman.io" | bash
+fi
 
 # All done, final message depends on whether zsh has just been installed or not
 if [ "$zsh_installed" -eq "0" ]; then
