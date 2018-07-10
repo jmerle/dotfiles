@@ -6,7 +6,6 @@ setopt LOCAL_OPTIONS
 setopt LOCAL_TRAPS
 setopt PROMPT_SUBST
 setopt IGNORE_EOF
-setopt COMPLETE_ALIASES
 
 # Keybindings
 bindkey '^[^[[D' backward-word

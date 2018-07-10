@@ -8,6 +8,8 @@ source ~/.zplug/init.zsh
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
 zplug "lukechilds/zsh-nvm"
+zplug "cswl/zsh-rbenv"
+zplug "docker/compose", use:contrib/completion/zsh
 zplug "peco/peco", as:command, from:gh-r
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 zplug "djui/alias-tips"
@@ -32,6 +34,14 @@ zplug load >/dev/null
 if [[ ! -d "$NVM_DIR/versions" ]]; then
     echo "Installing latest Node.js version"
     nvm install node
+fi
+
+# Install Ruby if it's not already installed
+if rbenv version | grep "system" &>/dev/null; then
+    echo "Installing Ruby 2.5.1 (this might take a while)"
+    sudo apt-get install -y libssl-dev libreadline-dev
+    rbenv install 2.5.1
+    rbenv global 2.5.1
 fi
 
 # History substring search keybindings
