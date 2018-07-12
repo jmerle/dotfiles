@@ -5,27 +5,27 @@ zsh_installed=1
 # Install build-essential
 if ! dpkg -s build-essential &>/dev/null; then
     echo "Installing build-essential"
-    sudo apt-get install -y build-essential
+    sudo apt install -y build-essential
 fi
 
 # Install zsh
 if ! command -v zsh &>/dev/null; then
     echo "Installing zsh"
     zsh_installed=0
-    sudo apt-get install -y zsh
+    sudo apt install -y zsh
     chsh -s $(which zsh)
 fi
 
 # Install GNU Stow
 if ! command -v stow &>/dev/null; then
     echo "Installing stow"
-    sudo apt-get install -y stow
+    sudo apt install -y stow
 fi
 
 # Install curl
 if ! command -v curl &>/dev/null; then
     echo "Installing curl"
-    sudo apt-get install -y curl
+    sudo apt install -y curl
 fi
 
 # Install zplug
@@ -37,7 +37,7 @@ fi
 # Install a Git credential manager
 if [[ ! -f /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret ]]; then
     echo "Installing Git credential manager"
-    sudo apt-get install -y libsecret-1-0 libsecret-1-dev
+    sudo apt install -y libsecret-1-0 libsecret-1-dev
     sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
 fi
 
@@ -50,9 +50,9 @@ if ! command -v yarn &>/dev/null; then
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
     # Install Yarn without installing Node.js, nvm takes care of that
-    sudo apt-get remove cmdtest
-    sudo apt-get update
-    sudo apt-get install --no-install-recommends yarn
+    sudo apt remove cmdtest
+    sudo apt update
+    sudo apt install --no-install-recommends yarn
 fi
 
 # Stow all directories

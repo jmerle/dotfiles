@@ -6,10 +6,10 @@ alias dc='cd ~/Documents'
 alias mega='cd ~/Documents/MEGA'
 
 # Package management
-alias ai='sudo apt-get install'
-alias as='sudo apt-cache search'
-alias au='sudo apt-get update'
-alias auu='sudo apt-get update && sudo apt-get upgrade'
+alias ai='sudo apt install'
+alias as='sudo apt search'
+alias au='sudo apt update'
+alias auu='sudo apt update && sudo apt upgrade'
 
 # Utilities
 alias reload='. ~/.zshrc'
