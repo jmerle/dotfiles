@@ -36,6 +36,9 @@ if [[ ! -d "$NVM_DIR/versions" ]]; then
     nvm install node
 fi
 
+# Ruby's rackup needs this
+nvm alias default 10 &>/dev/null
+
 # Install Ruby if it's not already installed
 if rbenv version | grep "system" &>/dev/null; then
     echo "Installing Ruby 2.5.1 (this might take a while)"
