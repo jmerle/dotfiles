@@ -16,7 +16,7 @@
         branch = auto
         ui = true
 [core]
-        excludesfile = ~/.gitignore
+        excludesfile = ~/.gitignore-global
         editor = code
 [apply]
         whitespace = nowarn
