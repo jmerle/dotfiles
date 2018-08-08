@@ -1,6 +1,11 @@
 # nvm with lazy-loading
 export NVM_LAZY_LOAD=true
 
+# Powerlevel9k configuration
+export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status background_jobs time)
+export POWERLEVEL9K_MODE='nerdfont-complete'
+
 # Source zplug
 source ~/.zplug/init.zsh
 
@@ -10,17 +15,15 @@ zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "lukechilds/zsh-nvm"
 zplug "cswl/zsh-rbenv"
 zplug "docker/compose", use:contrib/completion/zsh
-zplug "peco/peco", as:command, from:gh-r
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 zplug "djui/alias-tips"
-zplug "paulirish/git-open", as:plugin
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # Prompt theme
-zplug "denysdovhan/spaceship-prompt", use:"spaceship.zsh", from:github, as:theme
+zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 # Install plugins which are not yet installed
 if ! zplug check; then
