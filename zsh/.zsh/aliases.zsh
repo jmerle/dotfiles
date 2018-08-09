@@ -25,12 +25,6 @@ alias g='git'
 alias gac='git add -A && git commit -m'
 alias gaa='git add -A && git commit --amend -C HEAD'
 
-# PHP
-alias art='php artisan'
-alias c='composer'
-alias xdebug-enable='sudo phpenmod xdebug'
-alias xdebug-disable='sudo phpdismod xdebug'
-
 # Docker
 alias d='docker'
 alias dc='docker-compose'

@@ -16,7 +16,6 @@ zplug "lukechilds/zsh-nvm"
 zplug "cswl/zsh-rbenv"
 zplug "docker/compose", use:contrib/completion/zsh
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
-zplug "djui/alias-tips"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
