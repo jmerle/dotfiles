@@ -1,4 +1,4 @@
-# nvm with lazy-loading
+# nvm configuration
 export NVM_LAZY_LOAD=true
 
 # Powerlevel9k configuration
@@ -37,9 +37,6 @@ if [[ ! -d "$NVM_DIR/versions" ]]; then
     echo "Installing latest Node.js version"
     nvm install node
 fi
-
-# Ruby's rackup needs this
-nvm alias default 10 &>/dev/null
 
 # Install Ruby if it's not already installed
 if rbenv version | grep "system" &>/dev/null; then
