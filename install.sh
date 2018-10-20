@@ -41,6 +41,13 @@ if [[ ! -f /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsec
     sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
 fi
 
+# Install Node.js
+if ! command -v node &>/dev/null; then
+    echo "Installing Node.js"
+    wget -qO- https://deb.nodesource.com/setup_10.x | sudo -E bash -
+    sudo apt install -y nodejs
+fi
+
 # Install Yarn
 if ! command -v yarn &>/dev/null; then
     echo "Installing Yarn"
@@ -49,7 +56,7 @@ if ! command -v yarn &>/dev/null; then
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
-    # Install Yarn without installing Node.js, nvm takes care of that
+    # Install Yarn without installing Node.js
     sudo apt remove cmdtest
     sudo apt update
     sudo apt install --no-install-recommends yarn
