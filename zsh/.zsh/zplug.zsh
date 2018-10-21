@@ -1,6 +1,6 @@
 # Powerlevel9k configuration
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status background_jobs time)
+export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs time)
 export POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Source zplug

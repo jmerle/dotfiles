@@ -1,23 +1,22 @@
 [user]
         name = Jasper van Merle
         email = jaspervmerle@gmail.com
-[credential]
-        helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 [hub]
         protocol = https
 [alias]
         co = checkout
-        count   = !git shortlog -sn
-	    st = status
-	    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        count = !git shortlog -sn
+	st = status
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [color]
         diff = auto
         status = auto
         branch = auto
         ui = true
 [core]
-        excludesfile = ~/.gitignore-global
+        excludesFile = ~/.gitignore-global
         editor = code
+        askPass = /usr/bin/ksshaskpass
 [apply]
         whitespace = nowarn
 [mergetool]
@@ -25,7 +24,7 @@
 [difftool]
         prompt = false
 [help]
-        autocorrect = 1
+        autoCorrect = 1
 [push]
         # See `git help config` (search for push.default)
         # for more information on different options of the below setting.
