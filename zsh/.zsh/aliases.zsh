@@ -35,3 +35,8 @@ alias hosts='e /etc/hosts'
 # Ruby
 alias b='bundle'
 alias be='bundle exec'
+
+# Devilbox
+alias db-start='cd /home/jasper/Projects/devilbox && docker-compose up -d && cd - 2>&1 >/dev/null'
+alias db-stop='cd /home/jasper/Projects/devilbox && docker-compose stop && cd - 2>&1 >/dev/null'
+alias db-shell='cd /home/jasper/Projects/devilbox && ./shell.sh && cd - 2>&1 >/dev/null'
