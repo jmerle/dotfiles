@@ -1,6 +1,6 @@
 #!/bin/bash
 
-zsh_installed=1
+needs_restart=0
 
 # Install build-essential
 if ! dpkg -s build-essential &>/dev/null; then
@@ -11,7 +11,7 @@ fi
 # Install zsh
 if ! command -v zsh &>/dev/null; then
     echo "Installing zsh"
-    zsh_installed=0
+    needs_restart=1
     sudo apt install -y zsh
     chsh -s $(which zsh)
 fi
@@ -55,6 +55,18 @@ if ! command -v yarn &>/dev/null; then
     sudo apt install --no-install-recommends yarn
 fi
 
+# Install Docker
+if ! command -v docker &>/dev/null; then
+    echo "Installing Docker"
+    sudo apt install apt-transport-https ca-certificates software-properties-common
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu$(lsb_release -cs)stable"
+    sudo apt install docker-ce
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    needs_restart=1
+fi
+
 # Stow all directories
 for dir in */; do
     echo "Stowing ${dir::-1}"
@@ -69,7 +81,7 @@ if [[ ! -d "$HOME/.sdkman" ]]; then
 fi
 
 # All done, final message depends on whether zsh has just been installed or not
-if [ "$zsh_installed" -eq "0" ]; then
+if [ "$needs_restart" -eq "1" ]; then
     echo "Restart the machine to get access to the newest goodies."
 else
     echo "Exit this shell and start a new one to get access to the newest goodies."
