@@ -1,6 +1,3 @@
-# nvm configuration
-export NVM_LAZY_LOAD=true
-
 # Powerlevel9k configuration
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs time)
