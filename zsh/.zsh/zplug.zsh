@@ -1,3 +1,6 @@
+# nvm configuration
+export NVM_LAZY_LOAD=true
+
 # Powerlevel9k configuration
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs time)
@@ -9,6 +12,7 @@ source ~/.zplug/init.zsh
 # Let zplug manage itself
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
+zplug "lukechilds/zsh-nvm"
 zplug "cswl/zsh-rbenv"
 zplug "docker/compose", use:contrib/completion/zsh
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
@@ -27,6 +31,12 @@ fi
 
 # Load all plugins
 zplug load >/dev/null
+
+# Install Node.js if it's not already installed
+if [[ ! -d "$NVM_DIR/versions" ]]; then
+    echo "Installing latest LTS version of Node.js"
+    nvm install --lts
+fi
 
 # Install Ruby if it's not already installed
 if rbenv version | grep "system" &>/dev/null; then

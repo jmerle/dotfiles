@@ -28,17 +28,16 @@ if ! command -v curl &>/dev/null; then
     sudo apt install -y curl
 fi
 
+# Install jq
+if ! command -v jq &>/dev/null; then
+    echo "Installing jq"
+    sudo apt install -y jq
+fi
+
 # Install zplug
 if [[ ! -d "$HOME/.zplug" ]]; then
     echo "Installing zplug"
     curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-fi
-
-# Install Node.js
-if ! command -v node &>/dev/null; then
-    echo "Installing Node.js"
-    wget -qO- https://deb.nodesource.com/setup_10.x | sudo -E bash -
-    sudo apt install -y nodejs
 fi
 
 # Install Yarn
@@ -65,6 +64,14 @@ if ! command -v docker &>/dev/null; then
     sudo groupadd docker
     sudo usermod -aG docker $USER
     needs_restart=1
+fi
+
+# Install Docker Compose
+if ! command -v docker-compose &>/dev/null; then
+    echo "Installing Docker Compose"
+    docker_compose_url="$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq --raw-output '.assets[] | select(.name == "docker-compose-Linux-x86_64") | .browser_download_url')"
+    sudo curl -sSL "$docker_compose_url" -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
 fi
 
 # Stow all directories
