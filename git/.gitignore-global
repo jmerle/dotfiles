@@ -16,3 +16,6 @@
 .idea/
 *.iml
 *.ipr
+
+# DevDocs
+public/docs/docs.json
