@@ -33,3 +33,6 @@ alias dc='docker-compose'
 # Ruby
 alias b='bundle'
 alias be='bundle exec'
+
+# Drone
+alias drone='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v "`pwd`:/local" -e "DRONE_TOKEN=${DRONE_TOKEN}" -e "DRONE_SERVER=${DRONE_SERVER}" drone/cli'
