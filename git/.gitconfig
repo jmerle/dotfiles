@@ -5,9 +5,8 @@
         protocol = https
 [alias]
         co = checkout
-        count = !git shortlog -sn
-	      st = status
-	      lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        st = status
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [color]
         diff = auto
         status = auto
@@ -15,7 +14,7 @@
         ui = true
 [core]
         excludesFile = ~/.gitignore-global
-	      editor = code --wait
+        editor = code --wait
         askPass = /usr/bin/ksshaskpass
 [apply]
         whitespace = nowarn
@@ -24,7 +23,7 @@
 [difftool]
         prompt = false
 [help]
-        autoCorrect = 1
+        autoCorrect = 0
 [push]
         # See `git help config` (search for push.default)
         # for more information on different options of the below setting.

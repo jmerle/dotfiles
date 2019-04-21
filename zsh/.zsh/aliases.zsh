@@ -15,11 +15,11 @@ alias auu='sudo apt update && sudo apt upgrade'
 alias ls='ls -AFh --color=auto --group-directories-first'
 alias ll='ls -l'
 alias open='xdg-open'
-alias cls='clear'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias fopen='xdg-open "$(fzf)"'
-alias fdc='grep -rnw . -e'
+alias fdc='git grep --line-number'
+alias fdca='grep -rnw . -e'
 
 # Git
 alias g='git'
