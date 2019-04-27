@@ -11,6 +11,9 @@ export CLICOLOR=true
 # Yarn
 export PATH="$HOME/.yarn/bin:$PATH"
 
+# Hub
+export PATH="/opt/hub/bin:$PATH"
+
 e () {
     "$EDITOR" "${1:-.}"
 }

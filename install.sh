@@ -74,6 +74,18 @@ if ! command -v docker-compose &>/dev/null; then
     sudo chmod +x /usr/local/bin/docker-compose
 fi
 
+# Install Hub
+if ! command -v hub &>/dev/null; then
+    echo "Installing Hub"
+    hub_url="$(curl -s https://api.github.com/repos/github/hub/releases/latest | jq --raw-output '.assets[] | select(.label | contains("Linux 64")) | .browser_download_url')"
+    curl -sSL "$hub_url" -o /tmp/hub-linux.tgz
+    mkdir -p /tmp/hub-linux
+    tar -xvzf /tmp/hub-linux.tgz -C /tmp/hub-linux --strip 1 &>/dev/null
+    sudo mv /tmp/hub-linux /opt/hub
+    sudo cp /opt/hub/etc/hub.zsh_completion /usr/local/share/zsh/site-functions/_hub
+    rm -rf /tmp/hub-linux.tgz /tmp/hub-linux
+fi
+
 # Stow all directories
 for dir in */; do
     echo "Stowing ${dir::-1}"

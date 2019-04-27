@@ -22,6 +22,7 @@ alias fdc='git grep --line-number'
 alias fdca='grep -rnw . -e'
 
 # Git
+alias git='hub'
 alias g='git'
 alias gac='git add -A && git commit -m'
 alias gaa='git add -A && git commit --amend -C HEAD'
