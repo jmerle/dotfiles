@@ -1,6 +1,8 @@
 [user]
   name = Jasper van Merle
   email = jaspervmerle@gmail.com
+[hub]
+  protocol = https
 [alias]
   co = checkout
   st = status
