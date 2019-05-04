@@ -1,6 +1,8 @@
 [user]
   name = Jasper van Merle
   email = jaspervmerle@gmail.com
+[credential]
+  helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 [hub]
   protocol = https
 [alias]
@@ -15,7 +17,6 @@
 [core]
   excludesFile = ~/.gitignore-global
   editor = code --wait
-  askPass = /usr/bin/ksshaskpass
 [apply]
   whitespace = nowarn
 [mergetool]

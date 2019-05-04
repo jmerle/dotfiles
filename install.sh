@@ -40,6 +40,13 @@ if [[ ! -d "$HOME/.zplug" ]]; then
     curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 fi
 
+# Install a Git credential manager
+if [[ ! -f /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret ]]; then
+    echo "Installing Git credential manager"
+    sudo apt install -y libsecret-1-0 libsecret-1-dev
+    sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
+fi
+
 # Install Yarn
 if ! command -v yarn &>/dev/null; then
     echo "Installing Yarn"
