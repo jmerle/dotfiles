@@ -6,10 +6,11 @@ alias dc='cd ~/Documents'
 alias drive='cd ~/Drive'
 
 # Package management
-alias ai='sudo apt install'
-alias as='sudo apt search'
-alias au='sudo apt update'
-alias auu='sudo apt update && sudo apt upgrade'
+alias pk='pkcon'
+alias pki='pkcon install'
+alias pks='pkcon search'
+alias pkr='pkcon refresh'
+alias pkru='pkcon refresh && pkcon update'
 
 # Utilities
 alias ls='ls -AFh --color=auto --group-directories-first'
