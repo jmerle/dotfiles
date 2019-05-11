@@ -35,3 +35,7 @@ alias dc='docker-compose'
 # Ruby
 alias b='bundle'
 alias be='bundle exec'
+
+# Plex
+alias plexstart='docker run -d --name plex --net host -e PUID=1000 -e PGID=1000 -e VERSION=docker -v plex-config:/config -v ~/Videos/Movies:/data/movies -v ~/Videos/Series:/data/series linuxserver/plex'
+alias plexstop='docker stop plex && docker container rm plex'
