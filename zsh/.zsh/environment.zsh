@@ -14,6 +14,9 @@ export PATH="$HOME/.yarn/bin:$PATH"
 # Hub
 export PATH="/opt/hub/bin:$PATH"
 
+# Snap
+export PATH="/snap/bin:$PATH"
+
 e () {
     "$EDITOR" "${1:-.}"
 }
