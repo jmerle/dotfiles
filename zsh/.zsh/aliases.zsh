@@ -21,6 +21,8 @@ alias pbpaste='xclip -selection clipboard -o'
 alias fopen='xdg-open "$(fzf)"'
 alias fdc='git grep --line-number'
 alias fdca='grep -rnw . -e'
+alias localip='hostname -I | cut -d" " -f1'
+alias remoteip='curl -w "\n" ifconfig.me'
 
 # Git
 alias git='hub'

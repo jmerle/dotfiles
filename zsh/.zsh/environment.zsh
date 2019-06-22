@@ -17,11 +17,7 @@ export PATH="/opt/hub/bin:$PATH"
 # Snap
 export PATH="/snap/bin:$PATH"
 
+# Open file or directory in editor
 e () {
     "$EDITOR" "${1:-.}"
-}
-
-precmd () {
-  window_title="\033]0;${PWD##*/}\007"
-  echo -ne "$window_title"
 }
