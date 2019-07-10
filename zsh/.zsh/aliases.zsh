@@ -37,3 +37,6 @@ alias dc='docker-compose'
 # Ruby
 alias b='bundle'
 alias be='bundle exec'
+
+# DevDocs
+alias ddadd='git add -A && git reset -- public/docs/docs.json'

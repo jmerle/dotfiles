@@ -11,6 +11,7 @@ zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
 zplug "lukechilds/zsh-nvm"
 zplug "cswl/zsh-rbenv"
+zplug "zdharma/zsh-diff-so-fancy"
 zplug "docker/compose", use:contrib/completion/zsh
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 zplug "zsh-users/zsh-completions"
