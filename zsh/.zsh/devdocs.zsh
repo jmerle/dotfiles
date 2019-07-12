@@ -35,10 +35,10 @@ ddup () {
     local image="jmerle/devdocs:$tag"
 
     ssh jasper@51.68.121.142 /bin/bash << EOF
-    echo "$ docker rm -f $container"
-    docker rm -f $container
     echo "$ docker pull $image"
     docker pull $image
+    echo "$ docker rm -f $container"
+    docker rm -f $container
     echo "$ docker run -d --name=$container --network=web -l traefik.frontend.rule=Host:$subdomain.devdocs.jmerle.dev $image"
     docker run -d --name=$container --network=web -l traefik.frontend.rule=Host:$subdomain.devdocs.jmerle.dev $image
 EOF
