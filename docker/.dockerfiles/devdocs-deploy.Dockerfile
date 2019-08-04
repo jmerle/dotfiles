@@ -10,7 +10,7 @@ WORKDIR /devdocs
 
 COPY Gemfile Gemfile.lock /devdocs/
 
-RUN apk --update add nodejs build-base libstdc++ gzip git zlib-dev && \
+RUN apk --update add nodejs build-base libstdc++ gzip git zlib-dev libcurl && \
     gem install bundler && \
     bundle install --system --without test && \
     apk del gzip build-base git zlib-dev && \

@@ -1,53 +1,33 @@
-_dd_branch_name_or () {
-    local branch_name=$1
-
-    if [[ $# < 1 ]]; then
-        branch_name=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
-    fi
-
-    echo $branch_name
-}
-
 ddbuild () {
-    local tag=$(_dd_branch_name_or $1)
-
     local dockerfile="${HOME}/.dockerfiles/devdocs-deploy.Dockerfile"
-    local image="jmerle/devdocs:$tag"
+    local image="jmerle/devdocs:$1"
 
     echo "$ docker build -f \"$dockerfile\" -t \"$image\""
     docker build -f "$dockerfile" -t "$image" .
 }
 
 ddpush () {
-    local tag=$(_dd_branch_name_or $1)
-
-    local image="jmerle/devdocs:$tag"
-
-    echo "$ docker push \"$image\""
-    docker push "jmerle/devdocs:$tag"
+    echo "$ docker push \"$1\""
+    docker push "jmerle/devdocs:$1"
 }
 
 ddup () {
-    local subdomain=$(_dd_branch_name_or $1)
-    local tag=$(_dd_branch_name_or $2)
-
-    local container="devdocs-$subdomain"
-    local image="jmerle/devdocs:$tag"
+    local domain="$1.devdocs.jmerle.dev"
+    local container="devdocs-$1"
+    local image="jmerle/devdocs:$1"
 
     ssh jasper@51.68.121.142 /bin/bash << EOF
     echo "$ docker pull $image"
     docker pull $image
     echo "$ docker rm -f $container"
     docker rm -f $container
-    echo "$ docker run -d --name=$container --network=web -l traefik.frontend.rule=Host:$subdomain.devdocs.jmerle.dev $image"
-    docker run -d --name=$container --network=web -l traefik.frontend.rule=Host:$subdomain.devdocs.jmerle.dev $image
+    echo "$ docker run -d --name=$container --network=web -l traefik.frontend.rule=Host:$domain $image"
+    docker run -d --name=$container --network=web -l traefik.frontend.rule=Host:$domain $image
 EOF
 }
 
 dddown () {
-    local subdomain=$(_dd_branch_name_or $1)
-
-    local container="devdocs-$subdomain"
+    local container="devdocs-$1"
 
     ssh jasper@51.68.121.142 /bin/bash << EOF
     echo "$ docker rm -f $container"
@@ -63,5 +43,5 @@ EOF
 }
 
 dddeploy() {
-    ddbuild $2 && ddpush $2 && ddup $1 $2
+    ddbuild $1 && ddpush $1 && ddup $1
 }
