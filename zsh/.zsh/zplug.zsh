@@ -20,7 +20,7 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # Prompt theme
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+zplug "romkatv/powerlevel10k", use:powerlevel10k.zsh-theme
 
 # Install plugins which are not yet installed
 if ! zplug check; then
