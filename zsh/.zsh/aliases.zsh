@@ -37,7 +37,6 @@ alias dc='docker-compose'
 # Ruby
 alias b='bundle'
 alias be='bundle exec'
-alias t='bundle exec thor'
 
 # DevDocs
 alias dd='cd ~/Projects/devdocs'
