@@ -37,3 +37,10 @@ alias dc='docker-compose'
 # Ruby
 alias b='bundle'
 alias be='bundle exec'
+alias t='bundle exec thor'
+
+# DevDocs
+alias dd='cd ~/Projects/devdocs'
+alias ddsync='git fetch upstream && git merge upstream/master'
+alias ddclean='rm -rf public/docs/* && be thor docs:download --default'
+alias ddcheck='bundle exec thor updates:check --github-token $DEVDOCS_GH_TOKEN'
