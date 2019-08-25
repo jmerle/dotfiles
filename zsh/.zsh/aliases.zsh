@@ -2,7 +2,6 @@
 alias dl='cd ~/Downloads'
 alias pr='cd ~/Projects'
 alias dt='cd ~/Desktop'
-alias dc='cd ~/Documents'
 alias drive='cd ~/Drive'
 
 # Package management
