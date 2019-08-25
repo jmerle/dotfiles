@@ -8,6 +8,7 @@ alias drive='cd ~/Drive'
 # Package management
 alias pk='pkcon'
 alias pki='pkcon install'
+alias pkil='pkcon install-local'
 alias pks='pkcon search'
 alias pkr='pkcon refresh'
 alias pkru='pkcon refresh && pkcon update'
