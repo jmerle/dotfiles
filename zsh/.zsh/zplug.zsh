@@ -38,10 +38,10 @@ fi
 
 # Install Ruby if it's not already installed
 if rbenv version | grep "system" &>/dev/null; then
-    echo "Installing Ruby 2.6.3 (this might take a while)"
+    echo "Installing Ruby 2.6.5 (this might take a while)"
     sudo apt install -y libssl-dev libreadline-dev zlib1g-dev
-    rbenv install 2.6.3
-    rbenv global 2.6.3
+    rbenv install 2.6.5
+    rbenv global 2.6.5
 fi
 
 # History substring search keybindings
