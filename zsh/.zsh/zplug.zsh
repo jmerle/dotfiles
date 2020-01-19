@@ -42,10 +42,11 @@ fi
 
 # Install Python if it's not already installed
 if [[ -z "$(ls -A $PYENV_HOME/versions)" ]]; then
-    echo "Installing Python 3.7.6"
+    echo "Installing Python 2.7.17 and 3.7.6"
     sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
                             libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
                             xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+    pyenv install 2.7.17
     pyenv install 3.7.6
     pyenv global 3.7.6
     pip install --upgrade pip
