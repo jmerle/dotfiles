@@ -1,7 +1,7 @@
 # Powerlevel9k configuration
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir virtualenv vcs)
 export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs time)
-export POWERLEVEL9K_MODE='nerdfont-complete'
+export POWERLEVEL9K_MODE="nerdfont-complete"
 
 # Lazy-load nvm for faster startup
 export NVM_LAZY_LOAD=true
