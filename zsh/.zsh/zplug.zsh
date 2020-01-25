@@ -50,7 +50,7 @@ if [[ -z "$(ls -A $PYENV_HOME/versions)" ]]; then
     pyenv install 3.7.6
     pyenv global 3.7.6
     pip install --upgrade pip
-    pip install pip-autoremove pipenv
+    pip install pip-autoremove
 fi
 
 # History substring search keybindings
