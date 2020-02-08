@@ -10,7 +10,6 @@ source ~/.zplug/init.zsh
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
 zplug "lukechilds/zsh-nvm"
-zplug "mattberther/zsh-pyenv"
 zplug "zdharma/zsh-diff-so-fancy"
 zplug "docker/compose", use:contrib/completion/zsh
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
@@ -35,19 +34,6 @@ zplug load >/dev/null
 if [[ ! -d "$NVM_DIR/versions" ]]; then
     echo "Installing latest LTS version of Node.js"
     nvm install --lts
-fi
-
-# Install Python if it's not already installed
-if [[ -z "$(ls -A $PYENV_HOME/versions)" ]]; then
-    echo "Installing Python 2.7.17 and 3.7.6"
-    sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
-                            libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-                            xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
-    pyenv install 2.7.17
-    pyenv install 3.7.6
-    pyenv global 3.7.6
-    pip install --upgrade pip
-    pip install pip-autoremove
 fi
 
 # History substring search keybindings
