@@ -3,6 +3,9 @@ export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir virtualenv vcs)
 export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs time)
 export POWERLEVEL9K_MODE="nerdfont-complete"
 
+# fzf configuration
+export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
+
 # Source zplug
 source ~/.zplug/init.zsh
 
@@ -13,6 +16,7 @@ zplug "lukechilds/zsh-nvm"
 zplug "zdharma/zsh-diff-so-fancy"
 zplug "docker/compose", use:contrib/completion/zsh
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
+zplug "BurntSushi/ripgrep", from:gh-r, as:command, rename-to:rg
 zplug "lib/completion", from:oh-my-zsh
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
