@@ -5,7 +5,3 @@ for file (~/.zsh/*.zsh) source $file
 if [[ -f ~/.localrc ]]; then
   source ~/.localrc
 fi
-
-# Initialize SDKMAN
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"

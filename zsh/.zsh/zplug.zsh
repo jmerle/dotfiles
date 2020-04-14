@@ -12,9 +12,7 @@ source ~/.zplug/init.zsh
 # Let zplug manage itself
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
-zplug "lukechilds/zsh-nvm"
 zplug "zdharma/zsh-diff-so-fancy"
-zplug "docker/compose", use:contrib/completion/zsh
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 zplug "BurntSushi/ripgrep", from:gh-r, as:command, rename-to:rg
 zplug "lib/completion", from:oh-my-zsh
@@ -33,12 +31,6 @@ fi
 
 # Load all plugins
 zplug load >/dev/null
-
-# Install Node.js if it's not already installed
-if [[ ! -d "$NVM_DIR/versions" ]]; then
-    echo "Installing latest LTS version of Node.js"
-    nvm install --lts
-fi
 
 # History substring search keybindings
 bindkey '\eOA' history-substring-search-up

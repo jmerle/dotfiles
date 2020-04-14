@@ -8,15 +8,6 @@ export LANG=en_US.UTF-8
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
-# Yarn
-export PATH="$HOME/.yarn/bin:$PATH"
-
-# Hub
-export PATH="/opt/hub/bin:$PATH"
-
-# Snap
-export PATH="/snap/bin:$PATH"
-
 # Open file or directory in editor
 e () {
     "$EDITOR" "${1:-.}"
