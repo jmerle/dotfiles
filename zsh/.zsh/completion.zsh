@@ -1,5 +1,3 @@
-fpath=(~/.zsh/completions $fpath)
-
 autoload -Uz compinit
 
 # Speed up compinit by only checking the cached .zcompdump once a day
