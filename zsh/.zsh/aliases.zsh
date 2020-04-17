@@ -26,3 +26,4 @@ alias dc='docker-compose'
 
 # Python
 alias py='python'
+alias ipy='ipython'

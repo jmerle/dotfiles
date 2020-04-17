@@ -8,7 +8,7 @@ indent_size = 2
 [Jenkinsfile]
 indent_size = 4
 
-[*.{kt,kts,gradle,md,Jenkinsfile,cs,py}]
+[*.{kt,kts,gradle,md,Jenkinsfile,cs,py,pyi}]
 indent_size = 4
 
 [*.md]
