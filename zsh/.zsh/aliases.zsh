@@ -23,7 +23,12 @@ alias gaa='git add -A && git commit --amend -C HEAD'
 # Docker
 alias d='docker'
 alias dc='docker-compose'
+alias dvps='docker-compose -H "ssh://jasper@$(dig +short jmerle.dev)"'
+alias dcvps='docker-compose -H "ssh://jasper@$(dig +short jmerle.dev)"'
 
 # Python
 alias py='python'
 alias ipy='ipython'
+
+# SSH
+alias vps='ssh "$(dig +short jmerle.dev)"'
