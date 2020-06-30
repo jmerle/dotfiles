@@ -18,6 +18,12 @@ if ! command -v git &>/dev/null; then
     exit 1
 fi
 
+# Check for curl
+if ! command -v curl &>/dev/null; then
+    echo "Install curl first"
+    exit 1
+fi
+
 # Install zplug
 if [[ ! -d "$HOME/.zplug" ]]; then
     echo "Installing zplug"
