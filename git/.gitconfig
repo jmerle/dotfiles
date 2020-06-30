@@ -17,7 +17,7 @@
   editor = code --wait
   pager = diff-so-fancy | less --tabs=4 -RFX
 [credential]
-  helper = libsecret
+  helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 [apply]
   whitespace = nowarn
 [mergetool]
