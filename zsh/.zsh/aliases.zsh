@@ -2,8 +2,6 @@
 alias dl='cd ~/Downloads'
 alias pr='cd ~/Projects'
 alias dt='cd ~/Desktop'
-alias drive='cd ~/Drive'
-alias teams='cd ~/Teams'
 alias apps='cd ~/Applications'
 
 # Utilities
@@ -15,7 +13,6 @@ alias pbpaste='xclip -selection clipboard -o'
 alias fopen='xdg-open "$(fzf)"'
 
 # Git
-alias git='hub'
 alias g='git'
 alias gac='git add -A && git commit -m'
 alias gaa='git add -A && git commit --amend -C HEAD'

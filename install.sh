@@ -18,12 +18,6 @@ if ! command -v git &>/dev/null; then
     exit 1
 fi
 
-# Check for Hub
-if ! command -v hub &>/dev/null; then
-    echo "Install Hub first"
-    exit 1
-fi
-
 # Install zplug
 if [[ ! -d "$HOME/.zplug" ]]; then
     echo "Installing zplug"
