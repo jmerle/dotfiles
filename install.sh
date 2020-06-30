@@ -30,6 +30,13 @@ if [[ ! -d "$HOME/.zplug" ]]; then
     curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 fi
 
+# Install libsecret
+if [[ ! -f /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret ]]; then
+    echo "Installing libsecret"
+    sudo apt install -y libsecret-1-0 libsecret-1-dev
+    sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
+fi
+
 # Stow all directories
 for dir in */; do
     echo "Stowing ${dir::-1}"
