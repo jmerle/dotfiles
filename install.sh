@@ -24,17 +24,16 @@ if ! command -v curl &>/dev/null; then
     exit 1
 fi
 
+# Check for libsecret
+if [[ ! -f /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret ]]; then
+    echo "Install libsecret first"
+    exit 1
+fi
+
 # Install zplug
 if [[ ! -d "$HOME/.zplug" ]]; then
     echo "Installing zplug"
     curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-fi
-
-# Install libsecret
-if [[ ! -f /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret ]]; then
-    echo "Installing libsecret"
-    sudo apt install -y libsecret-1-0 libsecret-1-dev
-    sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
 fi
 
 # Stow all directories
