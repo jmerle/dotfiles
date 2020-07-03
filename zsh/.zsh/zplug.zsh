@@ -1,5 +1,5 @@
 # Powerlevel9k configuration
-export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir virtualenv vcs)
+export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir anaconda vcs)
 export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs time)
 export POWERLEVEL9K_MODE="nerdfont-complete"
 
@@ -22,7 +22,7 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # Prompt theme
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+zplug "romkatv/powerlevel10k", as:theme, depth:1
 
 # Install plugins which are not yet installed
 if ! zplug check; then
