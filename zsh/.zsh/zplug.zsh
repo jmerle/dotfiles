@@ -1,5 +1,12 @@
+# Custom Powerlevel9k segment for Miniconda which only appears if a non-base environment is activated
+prompt_anaconda_not_base() {
+    if [[ "$CONDA_DEFAULT_ENV" != "base" ]]; then
+        prompt_anaconda
+    fi
+}
+
 # Powerlevel9k configuration
-export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir anaconda vcs)
+export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir anaconda_not_base vcs)
 export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs time)
 export POWERLEVEL9K_MODE="nerdfont-complete"
 
