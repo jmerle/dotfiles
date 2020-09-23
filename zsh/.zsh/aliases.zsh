@@ -12,10 +12,18 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias fopen='xdg-open "$(fzf)"'
 
+e () {
+    "$EDITOR" "${1:-.}"
+}
+
 # Git
 alias g='git'
 alias gac='git add -A && git commit -m'
 alias gaa='git add -A && git commit --amend -C HEAD'
+
+gc () {
+    gh repo clone "$1" "$2" -- --recurse-submodules
+}
 
 # Docker
 alias d='docker'
