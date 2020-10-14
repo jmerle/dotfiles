@@ -23,6 +23,7 @@ zplug "zdharma/zsh-diff-so-fancy"
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 zplug "BurntSushi/ripgrep", from:gh-r, as:command, rename-to:rg
 zplug "lib/completion", from:oh-my-zsh
+zplug "esc/conda-zsh-completion"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
