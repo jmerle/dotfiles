@@ -1,0 +1,48 @@
+#!/usr/bin/env python
+
+import argparse
+import shutil
+import subprocess
+
+
+def exec(args):
+    try:
+        proc = subprocess.run(args)
+        if proc.returncode != 0:
+            exit(1)
+    except FileNotFoundError:
+        exit(1)
+
+
+parser = argparse.ArgumentParser(description="create a new QuantConnect project")
+parser.add_argument("type",
+                    metavar="type",
+                    choices=["classic", "alpha", "competition"],
+                    help="type of the project to create")
+parser.add_argument("path",
+                    help="path of the project to create")
+
+args = parser.parse_args()
+
+exec(["qcli", "projects:new", args.path])
+
+main_file_name = "main" if args.type == "classic" else args.type
+shutil.copyfile(f"Python Template/{main_file_name}.py", f"{args.path}/main.py")
+shutil.copyfile(f"Python Template/benchmark.py", f"{args.path}/benchmark.py")
+shutil.copyfile(f"Python Template/research.ipynb", f"{args.path}/research.ipynb")
+
+name = args.path.title()
+for word_to_remove in ["Algorithm", "Alpha", "Alpha Model"]:
+    name = name.replace(word_to_remove, "")
+name = "".join([ch for ch in name if ch.isalnum()])
+
+with open(f"{args.path}/main.py", "r") as file:
+    main_content = file.read()
+
+main_content = main_content.replace("MyAlgorithm", f"{name}Algorithm")
+main_content = main_content.replace("MyAlphaModel", f"{name}AlphaModel")
+
+with open(f"{args.path}/main.py", "w") as file:
+    file.write(main_content)
+
+exec(["qcli", "files:push", "-p", args.path])
