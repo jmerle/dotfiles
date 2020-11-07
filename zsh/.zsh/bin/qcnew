@@ -32,7 +32,7 @@ shutil.copyfile(f"Python Template/benchmark.py", f"{args.path}/benchmark.py")
 shutil.copyfile(f"Python Template/research.ipynb", f"{args.path}/research.ipynb")
 
 name = args.path.title()
-for word_to_remove in ["Algorithm", "Alpha", "Alpha Model"]:
+for word_to_remove in ["Algorithm", "Alpha Model", "Alpha"]:
     name = name.replace(word_to_remove, "")
 name = "".join([ch for ch in name if ch.isalnum()])
 
