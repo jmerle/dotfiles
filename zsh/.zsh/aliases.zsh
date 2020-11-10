@@ -41,3 +41,11 @@ alias be='bundle exec'
 
 # SSH
 alias vps='ssh "$(dig +short jmerle.dev)"'
+
+# LaTeX
+ltcp () {
+    for file in "$@"
+    do
+        cp "/home/jasper/Projects/latex-templates/$file.sty" "$file.sty"
+    done
+}
