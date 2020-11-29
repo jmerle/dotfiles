@@ -19,12 +19,12 @@ project_dir = os.path.dirname(path)
 file_name = os.path.basename(path)
 
 with open("quantconnect-cli.json") as file:
-    data = json.loads(file.read())
+    project_index = json.loads(file.read())["projectIndex"]
 
-if project_dir not in data["projectIndex"]:
+if project_dir not in project_index:
     print(f"'{path}' does not exist in project index")
     exit(1)
 
-project_id = data["projectIndex"][project_dir]
+project_id = project_index[project_dir]
 
 webbrowser.open(f"https://www.quantconnect.com/terminal/notebook/{project_id}?file={file_name}")
