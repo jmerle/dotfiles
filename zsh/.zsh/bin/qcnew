@@ -46,3 +46,4 @@ with open(f"{args.path}/main.py", "w") as file:
     file.write(main_content)
 
 exec(["qcli", "files:push", "-p", args.path])
+exec(["qcs", args.path])

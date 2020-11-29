@@ -22,7 +22,7 @@ with open("quantconnect-cli.json") as file:
     project_index = json.loads(file.read())["projectIndex"]
 
 if project_dir not in project_index:
-    print(f"'{path}' does not exist in project index")
+    print(f"'{path}' does not exist in the project index")
     exit(1)
 
 project_id = project_index[project_dir]
