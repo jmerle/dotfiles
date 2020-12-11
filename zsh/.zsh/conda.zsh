@@ -1,4 +1,4 @@
-# Set up miniconda if it is installed
+# Set up Miniconda if it is installed
 if [[ -d "/home/jasper/.miniconda3" ]]; then
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
