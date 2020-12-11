@@ -35,10 +35,6 @@ alias dcvps='docker-compose -H "ssh://jasper@$(dig +short jmerle.dev)"'
 alias py='python'
 alias ipy='ipython'
 
-# Ruby
-alias b='bundle'
-alias be='bundle exec'
-
 # SSH
 alias vps='ssh "$(dig +short jmerle.dev)"'
 
