@@ -4,6 +4,14 @@ alias pr='cd ~/Projects'
 alias dt='cd ~/Desktop'
 alias apps='cd ~/Applications'
 
+# Package management
+alias pk='pkcon'
+alias pki='pkcon install'
+alias pkil='pkcon install-local'
+alias pks='pkcon search'
+alias pkr='pkcon refresh'
+alias pkru='pkcon refresh && pkcon update'
+
 # Utilities
 alias ls='ls -AFh --color=auto --group-directories-first'
 alias ll='ls -l'
