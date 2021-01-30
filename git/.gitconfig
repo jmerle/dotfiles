@@ -15,9 +15,8 @@
 [core]
   excludesFile = ~/.gitignore-global
   editor = code --wait --new-window
+  askPass = /usr/bin/ksshaskpass
   pager = diff-so-fancy | less --tabs=4 -RFX
-[credential]
-  helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 [apply]
   whitespace = nowarn
 [mergetool]
