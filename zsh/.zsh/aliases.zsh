@@ -6,8 +6,7 @@ alias apps='cd ~/Applications'
 
 # Package management
 alias pk='pkcon'
-alias pki='pkcon install'
-alias pkil='pkcon install-local'
+alias pki='sudo apt install'
 alias pks='pkcon search'
 alias pkr='pkcon refresh'
 alias pkru='pkcon refresh && pkcon update'
@@ -38,6 +37,9 @@ alias d='docker'
 alias dc='docker-compose'
 alias dvps='docker-compose -H "ssh://jasper@$(dig +short jmerle.dev)"'
 alias dcvps='docker-compose -H "ssh://jasper@$(dig +short jmerle.dev)"'
+
+# Node.js
+alias nvmu='nvm install --lts --reinstall-packages-from=current'
 
 # Python
 alias py='python'

@@ -24,12 +24,6 @@ if ! command -v curl &>/dev/null; then
     exit 1
 fi
 
-# Check for libsecret
-if [[ ! -f /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret ]]; then
-    echo "Install libsecret first"
-    exit 1
-fi
-
 # Install zplug
 if [[ ! -d "$HOME/.zplug" ]]; then
     echo "Installing zplug"
