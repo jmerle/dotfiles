@@ -41,6 +41,10 @@ fi
 # Load all plugins
 zplug load >/dev/null
 
+# Add binaries of common applications to PATH
+command -v yarn &>/dev/null && export PATH="$PATH:$(yarn global bin)"
+command -v inkdrop &>/dev/null && export PATH="$PATH:/usr/lib/inkdrop/resources/app/ipm/bin"
+
 # History substring search keybindings
 bindkey '\eOA' history-substring-search-up
 bindkey '\eOB' history-substring-search-down
