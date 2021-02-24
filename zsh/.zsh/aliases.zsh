@@ -55,3 +55,6 @@ ltcp () {
         cp "/home/jasper/Projects/latex-templates/$file.sty" "$file.sty"
     done
 }
+
+# Lean
+alias toolbox='docker run --volume "$(pwd)/data:/Lean/Data" --entrypoint mono quantconnect/lean QuantConnect.ToolBox.exe --destination-dir /Lean/Data'
