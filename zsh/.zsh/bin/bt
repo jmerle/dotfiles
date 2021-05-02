@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+lean backtest "$@"
+
+backtest_dir=$(ls -td "$1/backtests/"* | head -1)
+xdg-open "http://localhost:8080/?backtest=$backtest_dir" &>/dev/null
