@@ -34,14 +34,16 @@ args = parser.parse_args()
 exec(["lean", "create-project", "--language", "python", args.path])
 
 main_file_name = "main" if args.type == "classic" else args.type
+notebook_file_name = "crypto" if args.type == "crypto" else "research"
+
 shutil.copyfile(f"Python Template/{main_file_name}.py", f"{args.path}/main.py")
-shutil.copyfile(f"Python Template/benchmark.py", f"{args.path}/benchmark.py")
-shutil.copyfile(f"Python Template/research.ipynb", f"{args.path}/research.ipynb")
+shutil.copyfile("Python Template/benchmark.py", f"{args.path}/benchmark.py")
+shutil.copyfile(f"Python Template/{notebook_file_name}.ipynb", f"{args.path}/research.ipynb")
 
 class_name = args.path
 for word_to_remove in ["Algorithm", "Alpha Model", "Alpha"]:
     class_name = class_name.replace(word_to_remove, "")
-class_name = re.sub(f"[^a-zA-Z0-9]", "", "".join(map(capitalize, class_name.split(" "))))
+class_name = re.sub(r"[^a-zA-Z0-9]", "", "".join(map(capitalize, class_name.split(" "))))
 
 with open(f"{args.path}/main.py", "r") as file:
     main_content = file.read()
