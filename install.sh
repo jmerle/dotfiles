@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Check for zsh
 if [ "$SHELL" != "/usr/bin/zsh" ]; then
@@ -21,6 +21,12 @@ fi
 # Check for curl
 if ! command -v curl &>/dev/null; then
     echo "Install curl first"
+    exit 1
+fi
+
+# Check for libsecret
+if [[ ! -f /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret ]]; then
+    echo "Install libsecret first"
     exit 1
 fi
 

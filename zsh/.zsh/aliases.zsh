@@ -4,13 +4,6 @@ alias pr='cd ~/Projects'
 alias dt='cd ~/Desktop'
 alias apps='cd ~/Applications'
 
-# Package management
-alias pk='pkcon'
-alias pki='sudo apt install'
-alias pks='pkcon search'
-alias pkr='pkcon refresh'
-alias pkru='pkcon refresh && pkcon update'
-
 # Utilities
 alias ls='ls -AFh --color=auto --group-directories-first'
 alias ll='ls -l'
@@ -57,4 +50,4 @@ ltcp () {
 }
 
 # Lean
-alias toolbox='docker run --volume "$(pwd)/data:/Lean/Data" --entrypoint mono quantconnect/lean QuantConnect.ToolBox.exe --destination-dir /Lean/Data'
+alias toolbox='docker run --volume "$(pwd)/data:/Lean/Data" --entrypoint dotnet quantconnect/lean QuantConnect.ToolBox.dll --destination-dir /Lean/Data'
