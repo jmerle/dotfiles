@@ -1,6 +1,6 @@
 # Custom Powerlevel9k segment for Miniconda which only appears if a non-base environment is activated
 prompt_anaconda_not_base() {
-    if [[ "$CONDA_DEFAULT_ENV" != "base" ]]; then
+    if [[ "$CONDA_DEFAULT_ENV" != "" && "$CONDA_DEFAULT_ENV" != "base" ]]; then
         prompt_anaconda
     fi
 }
@@ -9,6 +9,7 @@ prompt_anaconda_not_base() {
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir anaconda_not_base vcs)
 export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs time)
 export POWERLEVEL9K_MODE="nerdfont-complete"
+export ZLE_RPROMPT_INDENT=0
 
 # fzf configuration
 export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
