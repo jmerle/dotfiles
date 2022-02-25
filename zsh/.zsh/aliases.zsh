@@ -7,10 +7,13 @@ alias apps='cd ~/Applications'
 # Utilities
 alias ls='ls -AFh --color=auto --group-directories-first'
 alias ll='ls -l'
-alias open='xdg-open'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
-alias fopen='xdg-open "$(fzf)"'
+alias fopen='xdg-open "$(fzf)" &>/dev/null'
+
+open () {
+    xdg-open "${1:-.}" &>/dev/null
+}
 
 e () {
     "$EDITOR" "${1:-.}"
