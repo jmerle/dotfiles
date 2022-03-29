@@ -95,9 +95,9 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,windows,visualstudiocode
 
 # VS Code
-.vscode/*
+.vscode/
 
 # Toptal's JetBrains+all gitignore shifted from "ignore all" to "ignore most" in https://github.com/toptal/gitignore/pull/443
-.idea/*
+.idea/
 *.iml
 *.ipr
