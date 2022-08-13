@@ -14,10 +14,4 @@ if [[ -d "/home/jasper/.miniconda3" ]]; then
     fi
     unset __conda_setup
     # <<< conda initialize <<<
-
-    # There seems to be a bug where the wrong binaries are loaded by default
-    # Re-activating the base environment seems to fix this
-    # See https://stackoverflow.com/q/36733179
-    conda deactivate
-    conda activate base
 fi

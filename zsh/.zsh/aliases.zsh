@@ -9,7 +9,8 @@ alias ls='ls -AFh --color=auto --group-directories-first'
 alias ll='ls -l'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
-alias fopen='xdg-open "$(fzf)" &>/dev/null'
+alias fopen='open "$(fzf)"'
+alias fe='e "$(fzf)"'
 
 open () {
     xdg-open "${1:-.}" &>/dev/null
@@ -31,8 +32,6 @@ gc () {
 # Docker
 alias d='docker'
 alias dc='docker-compose'
-alias dvps='docker-compose -H "ssh://jasper@$(dig +short jmerle.dev)"'
-alias dcvps='docker-compose -H "ssh://jasper@$(dig +short jmerle.dev)"'
 
 # Node.js
 alias nvmu='nvm install --lts --reinstall-packages-from=current'
@@ -51,6 +50,3 @@ ltcp () {
         cp "/home/jasper/Projects/latex-templates/$file.sty" "$file.sty"
     done
 }
-
-# Lean
-alias toolbox='docker run --volume "$(pwd)/data:/Lean/Data" --entrypoint dotnet quantconnect/lean QuantConnect.ToolBox.dll --destination-dir /Lean/Data'
