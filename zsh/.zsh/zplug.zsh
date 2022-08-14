@@ -20,7 +20,7 @@ source ~/.zplug/init.zsh
 # Let zplug manage itself
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
-zplug "zdharma/zsh-diff-so-fancy"
+zplug "zdharma-continuum/zsh-diff-so-fancy"
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 zplug "BurntSushi/ripgrep", from:gh-r, as:command, rename-to:rg
 zplug "lib/completion", from:oh-my-zsh
