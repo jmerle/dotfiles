@@ -31,7 +31,7 @@ gc () {
 
 # Docker
 alias d='docker'
-alias dc='docker-compose'
+alias dc='docker compose'
 
 # Node.js
 alias nvmu='nvm install --lts --reinstall-packages-from=current'
