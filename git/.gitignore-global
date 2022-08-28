@@ -109,3 +109,6 @@ $RECYCLE.BIN/
 .idea/
 *.iml
 *.ipr
+
+# CLion build output
+cmake-build-*/
