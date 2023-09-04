@@ -1,4 +1,7 @@
 # Set up Mambaforge if it is installed
+
+export MAMBA_NO_BANNER=1
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/jasper/.mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
