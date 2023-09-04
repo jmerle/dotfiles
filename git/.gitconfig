@@ -26,8 +26,6 @@
   prompt = false
 [help]
   autoCorrect = 0
-[push]
-  default = simple
 [color "diff"]
   meta = 11
   frag = magenta bold
