@@ -11,9 +11,6 @@ export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time backgro
 export POWERLEVEL9K_MODE="nerdfont-complete"
 export ZLE_RPROMPT_INDENT=0
 
-# fzf configuration
-export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
-
 # Source zplug
 source ~/.zplug/init.zsh
 
@@ -21,8 +18,7 @@ source ~/.zplug/init.zsh
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
 zplug "zdharma-continuum/zsh-diff-so-fancy"
-zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
-zplug "BurntSushi/ripgrep", from:gh-r, as:command, rename-to:rg
+zplug "supercrabtree/k"
 zplug "lib/completion", from:oh-my-zsh
 zplug "esc/conda-zsh-completion"
 zplug "zsh-users/zsh-completions"
@@ -39,7 +35,7 @@ if ! zplug check; then
 fi
 
 # Load all plugins
-zplug load >/dev/null
+zplug load
 
 # History substring search keybindings
 bindkey '\eOA' history-substring-search-up

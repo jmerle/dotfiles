@@ -15,7 +15,7 @@
 [core]
   excludesFile = ~/.gitignore-global
   editor = code --wait --new-window
-  pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = diff-so-fancy | less --tabs=4 -RF
 [credential]
   helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 [apply]
@@ -29,6 +29,7 @@
 [color "diff"]
   meta = 11
   frag = magenta bold
+  func = 146 bold
   commit = yellow bold
   old = red bold
   new = green bold
@@ -42,3 +43,5 @@
   recurse = true
 [init]
   defaultBranch = master
+[interactive]
+  diffFilter = diff-so-fancy --patch

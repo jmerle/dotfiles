@@ -6,7 +6,7 @@ alias apps='cd ~/Applications'
 
 # Utilities
 alias ls='ls -AFh --color=auto --group-directories-first'
-alias ll='ls -l'
+alias ll='k -Ah'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias fopen='open "$(fzf)"'
@@ -42,11 +42,3 @@ alias ipy='ipython'
 
 # SSH
 alias vps='ssh "$(dig +short jmerle.dev)"'
-
-# LaTeX
-ltcp () {
-    for file in "$@"
-    do
-        cp "/home/jasper/Projects/latex-templates/$file.sty" "$file.sty"
-    done
-}
