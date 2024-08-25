@@ -6,7 +6,7 @@ prompt_anaconda_not_base() {
 }
 
 # Powerlevel9k configuration
-export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir anaconda_not_base vcs)
+export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir anaconda_not_base virtualenv vcs)
 export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs time)
 export POWERLEVEL9K_MODE="nerdfont-complete"
 export ZLE_RPROMPT_INDENT=0
