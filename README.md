@@ -1,11 +1,21 @@
 # Dotfiles
-My dotfiles, managed using GNU Stow.
+
+My personal dotfiles.
 
 ## Installation
-Clone this repository to `~/.dotfiles` and run `./install.sh`.
 
-## Updating
-Simply get the latest changes with `git pull` and run `./install.sh` again.
+Prerequisites:
+- [Git](https://git-scm.com/)
+- [Fish](https://fishshell.com/)
+- [Fisher](https://github.com/jorgebucaran/fisher)
+- [fzf](https://github.com/junegunn/fzf)
+- [Starship](https://starship.rs/)
+- libsecret
+
+Installation:
+1. Clone this repository to `~/.dotfiles`.
+2. Run `./install.sh`.
+3. Run `fisher update`.
 
 ## Local configuration
-If `~/.localrc` exists, it is automatically sourced after all the other scripts.
+If `~/.local.fish` exists it is automatically sourced after all the other scripts.
