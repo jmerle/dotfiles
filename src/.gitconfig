@@ -13,11 +13,10 @@
   branch = auto
   ui = true
 [core]
+  askpass=/usr/bin/ksshaskpass
   excludesFile = ~/.gitignore-global
   editor = code --wait --new-window
   pager = diff-so-fancy | less --tabs=4 -RF
-[credential]
-  helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 [apply]
   whitespace = nowarn
 [mergetool]
