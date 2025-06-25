@@ -1,6 +1,7 @@
 [user]
   name = Jasper van Merle
   email = jaspervmerle@gmail.com
+  signingkey = ~/.ssh/id_ed25519.pub
 [hub]
   protocol = https
 [alias]
@@ -44,3 +45,7 @@
   defaultBranch = master
 [interactive]
   diffFilter = diff-so-fancy --patch
+[gpg]
+  format = ssh
+[commit]
+  gpgsign = true

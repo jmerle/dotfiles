@@ -35,6 +35,13 @@ function gc -d "Clone a GitHub repository and its submodules with the GitHub CLI
     gh repo clone $argv -- --recurse-submodules
 end
 
+if not test -S ~/.ssh/ssh_auth_sock
+    eval (ssh-agent -c) &>/dev/null
+    ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+end
+
+set -x SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+
 starship init fish | source
 
 if test -f ~/.local.fish
