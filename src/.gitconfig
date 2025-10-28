@@ -2,8 +2,6 @@
   name = Jasper van Merle
   email = jaspervmerle@gmail.com
   signingkey = ~/.ssh/id_ed25519.pub
-[hub]
-  protocol = https
 [alias]
   co = checkout
   st = status
@@ -14,7 +12,6 @@
   branch = auto
   ui = true
 [core]
-  askpass=/usr/bin/ksshaskpass
   excludesFile = ~/.gitignore-global
   editor = code --wait --new-window
   pager = diff-so-fancy | less --tabs=4 -RF
