@@ -16,12 +16,11 @@ alias g="git"
 alias gac="git add -A && git commit -m"
 alias gaa="git add -A && git commit --amend -C HEAD"
 
-alias d="docker"
-alias dc="docker compose"
-
 alias py="python"
 alias ipy="ipython"
 alias act="source .venv/bin/activate.fish"
+
+alias dex="dotenvx"
 
 function o -d "Open a path in the default application"
     xdg-open $argv &>/dev/null
@@ -34,6 +33,25 @@ end
 function gc -d "Clone a GitHub repository and its submodules with the GitHub CLI"
     gh repo clone $argv -- --recurse-submodules
 end
+
+function d
+    if test -f .env; and grep -q "DOTENV_PUBLIC_KEY=" .env
+        dotenvx run -- docker $argv
+    else
+        docker $argv
+    end
+end
+
+function dc
+    if test -f .env; and grep -q "DOTENV_PUBLIC_KEY=" .env
+        dotenvx run -- docker compose $argv
+    else
+        docker compose $argv
+    end
+end
+
+complete -c d -w docker
+complete -c dc -w "docker compose"
 
 if not test -S ~/.ssh/ssh_auth_sock
     eval (ssh-agent -c) &>/dev/null
