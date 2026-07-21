@@ -1,0 +1,18 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = "$all$time$line_break$jobs$battery$status$container$netns$os$shell$character"
+
+[directory]
+truncate_to_repo = false
+
+[git_metrics]
+disabled = false
+
+[hostname]
+ssh_only = false
+
+[maven]
+disabled = true
+
+[time]
+disabled = false

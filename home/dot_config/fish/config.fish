@@ -53,12 +53,7 @@ end
 complete -c d -w docker
 complete -c dc -w "docker compose"
 
-if not test -S ~/.ssh/ssh_auth_sock
-    eval (ssh-agent -c) &>/dev/null
-    ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
-end
-
-set -x SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+fish_add_path ~/Applications
 
 starship init fish | source
 
